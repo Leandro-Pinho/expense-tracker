@@ -8,7 +8,11 @@ function App() {
       <C.HeaderText>Sistema Financeiro</C.HeaderText>
     </C.Header>
     <C.Body>
-      ...
+      {/* Area de informações */}
+
+      {/* Area de inserção */}
+      
+      {/* tabela de itens */}
     </C.Body>
    </C.Container>
   );
