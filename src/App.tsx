@@ -1,20 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as C from './App.styles';
+import { Item } from './types/Item'
+import { Category } from './types/Category';
+import { items } from './data/items';
+import { categories } from './data/categories';
+import { getCurrentMonth } from './helpers/dateFilter';
 
 function App() {
-  return (
-   <C.Container>
-    <C.Header>
-      <C.HeaderText>Sistema Financeiro</C.HeaderText>
-    </C.Header>
-    <C.Body>
-      {/* Area de informações */}
+  // list
+  const [list, setList] = useState(items);
+  // filter list
+  const [filteredList, setFilteredList] = useState<Item[]>([]);
+  // mês atual
+  const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
 
-      {/* Area de inserção */}
-      
-      {/* tabela de itens */}
-    </C.Body>
-   </C.Container>
+  useEffect(() => {
+
+  }, [list, currentMonth]);
+  return (
+    <C.Container>
+      <C.Header>
+        <C.HeaderText>Sistema Financeiro</C.HeaderText>
+      </C.Header>
+      <C.Body>
+        {/* Area de informações */}
+
+        {/* Area de inserção */}
+
+        {/* tabela de itens */}
+      </C.Body>
+    </C.Container>
   );
 }
 
