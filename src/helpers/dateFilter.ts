@@ -6,6 +6,7 @@ export const getCurrentMonth = () => {
     return `${now.getFullYear()}-${now.getMonth() + 1}`;
 }
 
+// filtrar a lista pelo mês
 export const filterListByMonth = (list: Item[], date: string): Item[] => {
     let newList: Item[] = [];
     let [year, month] = date.split('-');
@@ -22,6 +23,7 @@ export const filterListByMonth = (list: Item[], date: string): Item[] => {
     return newList;
 }
 
+// formatando a data para o formato brasileiro
 export const formatDate = (date: Date): string => {
     let year = date.getFullYear();
     let month = date.getMonth() + 1;
@@ -30,10 +32,18 @@ export const formatDate = (date: Date): string => {
     return `${addZeroToDate(day)}/${addZeroToDate(month)}/${year}`;
 }
 
+// para adicionar o '0' quando o numero for menor que 10
 const addZeroToDate = (n: number): string => {
     if (n < 10) {
         return `0${n}`
     } else {
         return `${n}`;
     }
+}
+
+// para aparecer o nome do mês em portugues
+export const formatCurrentMonth = (currentMonth: string): string => {
+    let [year, month] = currentMonth.split('-');
+    let months = ['janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+    return `${months[parseInt(month) - 1]} de ${year}`;
 }
