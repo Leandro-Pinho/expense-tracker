@@ -26,6 +26,7 @@ export const MonthTitle = styled.div`
    text-align: center;
 `;
 export const ResumeArea = styled.div`
+   display: flex;
    flex: 2;
 `;
 
